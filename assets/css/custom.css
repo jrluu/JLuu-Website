@@ -1,0 +1,115 @@
+.title{
+	color:white; 
+	letter-spacing: .06em;
+	font-size: 80px;
+	font-family: 'Open Sans', sans-serif;
+	
+}
+
+body{
+	padding-top: 50px;
+}
+
+p{
+	
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+i{
+	padding-left: 1rem;
+	padding-right: 1rem
+
+}
+
+
+
+#footer{
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+
+
+}
+
+
+.centered{
+	text-align: center;
+
+}
+
+
+/*margin for top and bottom*/
+.small_top_bot_margin{
+
+	margin-top:25px;
+	margin-bottom: 25px;
+}
+
+.big_top_bot_margin{
+
+	margin-top:50px;
+	margin-bottom:50px;
+}
+
+.marg_bot{
+	margin-bottom:50px;
+
+}
+
+/*Used for 5 columns*/
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("../images/goldengate1.jpg");
+
+    /* Set a specific height */
+    min-height: 700px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.grey-overlay{
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background-color:rgba(0,0,0,0.2);
+
+}
