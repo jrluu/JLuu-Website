@@ -1,9 +1,31 @@
+/*** TEXT ***/
+@font-face {
+
+font-family: 'Galano';
+src: url(../fonts/galano/Galano.otf);
+
+}
+
 .title{
 	color:white; 
 	letter-spacing: .06em;
 	font-size: 80px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Galano', sans-serif;
 	
+}
+
+.title-black{
+	color:black; 
+	letter-spacing: .06em;
+	font-size: 80px;
+	font-family: 'Galano', sans-serif;
+	
+
+}
+
+.text{
+
+	font-family: 'Galano', sans-serif;
 }
 
 body{
@@ -12,7 +34,8 @@ body{
 
 p{
 	
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Galano', sans-serif;
+	font-size:20px;
 }
 
 
@@ -22,7 +45,18 @@ i{
 
 }
 
+li{
 
+	font-family: 'Galano';
+	font-size:15px;
+}
+
+
+
+h3{
+	font-family:'Galano';
+
+}
 
 #footer{
       padding-top: 1rem;
@@ -31,14 +65,13 @@ i{
 
 }
 
-
 .centered{
 	text-align: center;
 
 }
 
 
-/*margin for top and bottom*/
+/*** MARGIN CLASSES***/
 .small_top_bot_margin{
 
 	margin-top:25px;
@@ -56,7 +89,11 @@ i{
 
 }
 
-/*Used for 5 columns*/
+.big_pad_bot{
+	padding-bottom:50px;
+
+}
+/*** 5 COLUMNS ***/
 .col-xs-15,
 .col-sm-15,
 .col-md-15,
@@ -90,6 +127,8 @@ i{
     }
 }
 
+
+/*** PARALLAX ***/
 .parallax {
     /* The image used */
     background-image: url("../images/goldengate1.jpg");
@@ -102,8 +141,9 @@ i{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
+ }
 
+/*** OVERLAY **/
 .grey-overlay{
 	position:absolute;
 	top:0;
