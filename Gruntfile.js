@@ -32,8 +32,19 @@ module.exports = function(grunt) {
                     dest: 'assets/images/build/'
                 }]
             }
+        },
+
+        //Runs task based on file changes
+        watch: {
+          js_change: {
+            files: ['assets/js/*'],
+            tasks: ['concat', 'uglify'],
+          },
+          image_change:{
+            files:['assets/images/used/*'],
+            tasks:['imagemin'],
+          },
         },   
-   
 
     });
 
@@ -41,6 +52,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('default', ['concat', 'uglify','imagemin']);
