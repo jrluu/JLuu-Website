@@ -148,7 +148,7 @@ h3{
 	position: relative;
 
     /* The image used */
-    background-image: url("../images/goldengate1.jpg");
+    background-image: url("../images/build/goldengate1.jpg");
 
     /* Set a specific height */
     min-height: 700px;
@@ -173,7 +173,7 @@ h3{
 .wide {
   width:100%;
   min-height:500px;
-  background-image:url('../images/goldengate1.jpg');
+  background-image:url('../images/build/goldengate1.jpg');
   background-size:cover;
   background-position: center;
   position:relative;
