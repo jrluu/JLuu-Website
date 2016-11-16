@@ -1,24 +1,50 @@
 module.exports = function(grunt) {
 
-    // 1. All configuration goes here 
+    // 1. All configuration goes here
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        //Concat JS files
-        concat: {
-            dist: {
-                src: [
-                    'assets/js/libs/*.js', // All JS in the libs folder
-                ],
-                dest: 'assets/js/build/production.js',
-            }
+        //Compress html
+        htmlmin: {
+            dist: {                                      // Target
+              options: {                                 // Target options
+                removeComments: true,
+                collapseWhitespace: true
+              },
+              files: {                                   // Dictionary of files
+                'index.html': 'assets/index.html',     // 'destination': 'source'
+              }
+            },
         },
 
-        //Removes JS formatting to save space
+        //Compress CSS
+        cssmin: {
+          options:{
+            rebase: false
+          },
+          target: {
+            files: {
+              'build/css/production.min.css':['assets/css/*.css']
+            }
+          }
+        },
+
+        //Concat JS  files
+        concat: {
+            js: {
+                src: [
+                    'assets/js/bootstrap.js', // Ordering matters
+                    'assets/js/*.js'
+                ],
+                dest: 'build/js/production.js',
+            },
+        },
+
+        //Compress JS
         uglify: {
             build: {
-                src: 'assets/js/build/production.js',
-                dest: 'assets/js/build/production.min.js'
+                src: 'build/js/production.js',
+                dest: 'build/js/production.min.js'
             }
         },
 
@@ -29,23 +55,24 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'assets/images/used/',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: 'assets/images/build/'
+                    dest: 'build/images/used/'
                 }]
             }
         },
-
-
-        htmlmin: {                                     // Task
-            dist: {                                      // Target
-              options: {                                 // Target options
-                removeComments: true,
-                collapseWhitespace: true
-              },
-              files: {                                   // Dictionary of files
-                'index.html': 'src/index.html',     // 'destination': 'source'
-              }
-            },
+/*
+        //Turn SASS files to CSS
+        sass: {
+          dist: {
+            files: [{
+              expand: true,
+              cwd: 'assets/sass/',
+              src: ['*.scss'],
+              dest:'assets/css/',
+              ext: '.css'
+            }]
+          }
         },
+*/
 
         //Runs task based on file changes
         watch: {
@@ -54,21 +81,37 @@ module.exports = function(grunt) {
             tasks: ['concat', 'uglify'],
           },
           image_change:{
-            files:['assets/images/used/*'],
+            files:['assets/img/used/*'],
             tasks:['imagemin'],
           },
-        },   
+          html_change:{
+            files:['assets/index.html'],
+            tasks:['htmlmin'],
+          },
+          /*
+          css_change:{
+            files:['assets/sass/*.scss'],
+            tasks:['sass', 'cssmin'],
+
+          }
+          */
+
+        },
 
     });
 
     // 3. Where we tell Grunt we plan to use this plug-in.
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-htmlmin');
+
+
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['concat', 'uglify','imagemin']);
-
+//    grunt.registerTask('default', ['sass','htmlmin','cssmin','concat', 'uglify','imagemin']);
+    grunt.registerTask('default', ['htmlmin','cssmin','concat', 'uglify','imagemin']);
 };

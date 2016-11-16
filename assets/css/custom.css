@@ -7,19 +7,19 @@ src: url(../fonts/galano/Galano.otf);
 }
 
 .title{
-	color:white; 
+	color:white;
 	letter-spacing: .06em;
 	font-size: 80px;
 	font-family: 'Galano', sans-serif;
-	
+
 }
 
 .title-black{
-	color:black; 
+	color:black;
 	letter-spacing: .06em;
 	font-size: 80px;
 	font-family: 'Galano', sans-serif;
-	
+
 
 }
 
@@ -29,7 +29,7 @@ html
     height: 100%;
     margin: 0px !important;
     padding: 0px;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 .text{
@@ -44,11 +44,11 @@ body{
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 p{
-	
+
 	font-family: 'Galano', sans-serif;
 	font-size:20px;
 }
@@ -148,7 +148,7 @@ h3{
 	position: relative;
 
     /* The image used */
-    background-image: url("../images/build/goldengate1.jpg");
+    background-image: url("../images/used/goldengate1.jpg");
 
     /* Set a specific height */
     min-height: 700px;
@@ -173,7 +173,7 @@ h3{
 .wide {
   width:100%;
   min-height:500px;
-  background-image:url('../images/build/goldengate1.jpg');
+  background-image:url('../images/used/goldengate1.jpg');
   background-size:cover;
   background-position: center;
   position:relative;
