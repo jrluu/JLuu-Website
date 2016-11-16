@@ -5,7 +5,7 @@
 ```$ git clone https://github.com/jrluu/JLuu-Website.git```
 
 ##To preview
-Click on index.html or click [here] (JonathanLuu.com)
+Click on index.html or click [here] (http://www.JonathanLuu.com)
 
 ##Technologies used
 * HTML, CSS, JS
