@@ -1,11 +1,20 @@
 #JonathanLuu.com
 
-##Install
+A live preview of this code is available [here](http://jonathanluu.com)
 
+This project features information about my life and the work that I have done.
+
+##Navigating the directory
+
+./assets - Contains uncompressed code and files  
+./build - Contains the minified and compressed files  
+./site_benchmarks - Contains PDFS showcasing the speed of the site  
+index.html - the main HTML files  
+Gruntfile.js - configuration for the Grunt tasks  
+package.json - a json file listing the Grunt Packages used  
+
+Cloning the directory
 ```$ git clone https://github.com/jrluu/JLuu-Website.git```
-
-##To preview
-Click on index.html or click [here] (http://www.JonathanLuu.com)
 
 ##Technologies used
 * HTML, CSS, JS
@@ -16,8 +25,7 @@ Click on index.html or click [here] (http://www.JonathanLuu.com)
 * SASS
 * [Bootstrap](http://getbootstrap.com)
 
-
-##Steps to optimize
+##Steps to run Grunt and automate tasks
 
 1. Install Grunt if you have not already  
 ```$ npm install -g grunt-cli```
